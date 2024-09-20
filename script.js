@@ -1,159 +1,106 @@
-const images = [
-    "https://imgur.com/9vkE71o.png",
-    "https://imgur.com/xXC89HQ.png",
-    "https://imgur.com/lzaR95f.png",
-    "https://imgur.com/gjSTo14.png",
-    "https://imgur.com/HMd0XZO.png",
-    "https://imgur.com/E23YJju.png",
-    "https://imgur.com/lGOLtIg.png",
-    "https://imgur.com/obpcNec.png",
-    "https://imgur.com/f3xzTA1.png",
-    "https://imgur.com/fk7ZB4B.png",
-    "https://imgur.com/r3Xe28s.png",
-    "https://imgur.com/KI7LOaK.png",
-    "https://imgur.com/Z75paag.png",
-    "https://imgur.com/wgF8KcA.png",
-    "https://imgur.com/Er8tNqH.png",
-    "https://imgur.com/lHGOX24.png",
-    "https://imgur.com/rVSOgAT.png",
-    "https://imgur.com/q0GSr5b.png",
-    "https://imgur.com/sBBGIVw.png",
-    "https://imgur.com/zuEi9Ny.png",
-    "https://imgur.com/0sIHVUT.png",
-    "https://imgur.com/YoIcVqw.png",
-    "https://imgur.com/aN2su77.png",
-    "https://imgur.com/ZB45qHc.png",
-    "https://imgur.com/otmmCz9.png",
-    "https://imgur.com/MetHUBo.png",
-    "https://imgur.com/kJiFZ5M.png",
-    "https://imgur.com/XtK4mr4.png",
-    "https://imgur.com/zsveeHS.png",
-    "https://imgur.com/IN66r8i.png",
-    "https://imgur.com/EHldD7t.png",
-    "https://imgur.com/20TQ1Tg.png",
-    "https://imgur.com/duWBVsx.png",
-    "https://imgur.com/xjTTdJO.png",
-    "https://imgur.com/aH1Xua2.png",
-    "https://imgur.com/dIGy0su.png",
-    "https://imgur.com/LkZLA3t.png",
-    "https://imgur.com/W7jx73F.png",
-    "https://imgur.com/GN2M1Cd.png",
-    "https://imgur.com/9WfRNVV.png",
-    "https://imgur.com/kQfcHUb.png",
-    "https://imgur.com/NNCyUTh.png",
-    "https://imgur.com/sv5V0gU.png",
-    "https://imgur.com/wuHkNzK.png",
-    "https://imgur.com/idf9XRX.png",
-    "https://imgur.com/Nlr4jPv.png",
-    "https://imgur.com/J7rXzrn.png",
-    "https://imgur.com/QD1LNIG.png",
-    "https://imgur.com/JWkkHCB.png",
-    "https://imgur.com/TaykWZf.png",
-    "https://imgur.com/1zqWrcF.png",
-    "https://imgur.com/avtFh1j.png",
-    "https://imgur.com/k3YfOUA.png",
-    "https://imgur.com/FIcSVgQ.png",
-    "https://imgur.com/8nmblza.png",
-    "https://imgur.com/CDNs95h.png",
-    "https://imgur.com/OC4q4CS.png",
-    "https://imgur.com/2Cl5eIO.png",
-    "https://imgur.com/vXWTepq.png",
-    "https://imgur.com/t8MHoqG.png",
-    "https://imgur.com/jnabozp.png",
-    "https://imgur.com/oFDVU4T.png",
-    "https://imgur.com/WcP7C8h.png",
-    "https://imgur.com/CIpXe2a.png",
-    "https://imgur.com/nLFbjcs.png",
-    "https://imgur.com/r92Iqxf.png",
-    "https://imgur.com/MI8B0UF.png",
-    "https://imgur.com/oAoMq1D.png",
-    "https://imgur.com/yTeaKop.png",
-    "https://imgur.com/HXVDQ0n.png",
-    "https://imgur.com/s9gCW2a.png",
-    "https://imgur.com/jwyxTPg.png",
-    "https://imgur.com/c6fCbul.png",
-    "https://imgur.com/KE0yBbR.png",
-    "https://imgur.com/QJDPrq9.png",
-    "https://imgur.com/AWQINGD.png",
-    "https://imgur.com/eq0209k.png",
-    "https://imgur.com/RYeZ4V9.png",
-    "https://imgur.com/ubA9eQg.png",
-    "https://imgur.com/jonj4FU.png",
-    "https://imgur.com/COg0JMj.png",
-    "https://imgur.com/RrSfV0a.png",
-    "https://imgur.com/KLr1tmt.png",
-    "https://imgur.com/zTjHlul.png",
-    "https://imgur.com/Iwl5H4c.png",
-    "https://imgur.com/XnzHooE.png",
-    "https://imgur.com/pe3CDVA.png",
-    "https://imgur.com/OZ6judX.png",
-    "https://imgur.com/ZQrsbsf.png",
-    "https://imgur.com/hV5JPg5.png",
-    "https://imgur.com/zq2fcub.png",
-    "https://imgur.com/LhwIDE3.png",
-    "https://imgur.com/KR3Gvra.png",
-    "https://imgur.com/qxpjEcs.png",
-    "https://imgur.com/PsztHUg.png",
-    "https://imgur.com/Wz09gPY.png",
-    "https://imgur.com/lPpRQpD.png",
-    "https://imgur.com/kxmaU2e.png",
-    "https://imgur.com/qdJIztZ.png",
-    "https://imgur.com/bcMQO0V.png",
-    "https://imgur.com/nXHMo2B.png",
-    "https://imgur.com/wpHPEBl.png",
-    "https://imgur.com/zzXrPLg.png",
-    "https://imgur.com/tjiapnq.png",
-    "https://imgur.com/6lW4yAE.png",
-    "https://imgur.com/O2iv9Pg.png",
-    "https://imgur.com/99CmXBs.png",
-    "https://imgur.com/DYCDoAD.png",
-    "https://imgur.com/HlnroI4.png",
-    "https://imgur.com/0ZNUfRk.png",
-    "https://imgur.com/orMnrX8.png",
-    "https://imgur.com/WPtDdSj.png",
-    "https://imgur.com/8llvxfR.png",
-    "https://imgur.com/cItUrw6.png",
-    "https://imgur.com/oox3rvr.png",
-    "https://imgur.com/HD3Ih6m.png",
-    "https://imgur.com/BjXwHq0.png",
-    "https://imgur.com/LfKKOBS.png",
-    "https://imgur.com/dNZGbke.png",
-    "https://imgur.com/jkqVgg0.png",
-    "https://imgur.com/tsYGNBg.png",
-    "https://imgur.com/IrwyCV8.png",
-    "https://imgur.com/jTwbcAZ.png",
-    "https://imgur.com/awRm8jY.png",
-    "https://imgur.com/14aPix3.png",
-    "https://imgur.com/wL2Onfx.png",
-    "https://imgur.com/hWaoPTT.png",
-    "https://imgur.com/hTEUKn8.png",
-    "https://imgur.com/OePm8UW.png",
-    "https://imgur.com/SMxAqE3.png",
-    "https://imgur.com/gBl6kha.png",
-    "https://imgur.com/LGgN8UL.png",
-    "https://imgur.com/PQUzKha.png",
-    "https://imgur.com/GBM6elg.png",
-    "https://imgur.com/Klc4Jou.png",
-    "https://imgur.com/Rsvtl70.png",
-    "https://imgur.com/oW4RQhc.png",
-    "https://imgur.com/R6FcuRG.png",
-    "https://imgur.com/Ws5Qv7D.png",
-    "https://imgur.com/JUjU4eJ.png",
-    "https://imgur.com/A9q9iev.png",
-    "https://imgur.com/kdu4K41.png",
-    "https://imgur.com/QwYAcrn.png",
-    "https://imgur.com/2sLDPL5.png",
-    "https://imgur.com/CtPF53q.png",
-    "https://imgur.com/r7WdMtY.png",
-    "https://imgur.com/zt4RSBJ.png",
-    "https://imgur.com/Mi4eqWm.png",
-    "https://imgur.com/UoVdj4Y.png"
+const fuzeNormalImages = [
+    { url: 'https://i.imgur.com/C1oR4sg.jpg', description: 'Notre tismé sucré' },
+    { url: 'https://i.imgur.com/48fiNLG.jpg', description: 'Julien qui fait un chat en Afrique' },
+    { url: 'https://i.imgur.com/QMBmso5.jpg', description: 'Riche Entrepreneur artiste' },
+    { url: 'https://i.imgur.com/NeHJv6w.jpg', description: 'Fuze se trompe de coiffeur' },
+    { url: 'https://i.imgur.com/hvkyAk0.jpg', description: 'Fuze et son sang espagnol' },
+    { url: 'https://i.imgur.com/dKCCYUS.jpg', description: 'Fuze à Bollywood' },
+    { url: 'https://i.imgur.com/FsDXbxw.jpg', description: 'Fuze agent immobillier' },
+    { url: 'https://i.imgur.com/I41Yf4D.jpg', description: 'Fuze le mexicain' },
+    { url: 'https://i.imgur.com/5D1DMs5.jpg', description: 'Titouan 18 ans et toujours au collège en 4ème' },
+    { url: 'https://i.imgur.com/rjg6McP.jpg', description: 'WTF c\'est IA qui a fait ça...' },
+    { url: 'https://i.imgur.com/jNRi57t.jpg', description: 'L\'Évadé fiscale sur yacht' },
+    { url: 'https://i.imgur.com/afb4pOR.jpg', description: 'Miss France Juliette' },
+    { url: 'https://i.imgur.com/JDAIAtk.jpg', description: 'Matthéo il croit qu\'il gère tout les filles' },
+    { url: 'https://i.imgur.com/JDAIAtk.jpg', description: 'c\'est l\'acteur typique des séries français sur TF1' },
+    { url: 'https://i.imgur.com/UIHabQ7.jpg', description: 'Fuze mais il est à Bollywood' }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    const randImageIndex = Math.floor(Math.random() * images.length);
-    const randImage = images[randImageIndex];
-    document.getElementById('randImg').src = randImage;
-    document.getElementById('imageContainer').style.backgroundImage = `url(${randImage})`;
-    document.getElementById('backgroundImg').src = randImage;
+const fuzeMondeImages = [
+    { url: 'https://i.imgur.com/vPQgEMo.jpg', description: 'Fuze in the street' },
+    { url: 'https://i.imgur.com/eTcItLN.jpg', description: 'Fuze explore Boston' },
+    { url: 'https://i.imgur.com/HPt0laI.jpg', description: 'Fuze en Studio Photo' },
+    { url: 'https://i.imgur.com/oKtHioB.jpg', description: 'Fuze le mannequin' },
+    { url: 'https://i.imgur.com/jw1MdGe.jpg', description: 'Fuze chez le photographe' },
+    { url: 'https://i.imgur.com/YOS3TMQ.jpg', description: 'Fuze en video' },
+    { url: 'https://i.imgur.com/4qgl0gF.jpg', description: 'Fuze ...' },
+    { url: 'https://i.imgur.com/QtveWpz.jpg', description: 'Fuze...' },
+    { url: 'https://i.imgur.com/WsYU45f.jpg', description: 'Fuze...' },
+    { url: 'https://i.imgur.com/JIgAQgn.jpg', description: 'Fuze à un nouveau projet' },
+    { url: 'https://i.imgur.com/FQFbz9e.jpg', description: 'Fuze est CEO sur Linkedin' },
+    { url: 'https://i.imgur.com/ppw7RKx.jpg', description: 'Fuze va en entretien' },
+    { url: 'https://i.imgur.com/EzHqKil.jpg', description: 'Fuze mais il a pris cher' },
+    { url: 'https://i.imgur.com/s0utoG6.jpg', description: 'Fuze Steve Jobs' },
+    { url: 'https://i.imgur.com/eyYrcmJ.jpg', description: 'Fuze fait un TED Talks' },
+    { url: 'https://i.imgur.com/8Ke53Uu.jpg', description: 'Fuze fait une Apple Keynote' },
+    { url: 'https://i.imgur.com/ZPYU5XP.jpg', description: 'Fuze monte l\'Everest' },
+    { url: 'https://i.imgur.com/v7RGhMW.jpg', description: 'Fuze monte l\'Everest' },
+    { url: 'https://i.imgur.com/oeZjtKe.jpg', description: 'Fuze monte l\'Everest' },
+    { url: 'https://i.imgur.com/dTbpTrm.jpg', description: 'Fuze monte l\'Everest' },
+    { url: 'https://i.imgur.com/vaWSHz0.jpg', description: 'Fuze monte l\'Everest' },
+    { url: 'https://i.imgur.com/8nSPXPE.jpg', description: 'Fuze le t-shirt blanc' },
+    { url: 'https://i.imgur.com/piTUcLU.jpg', description: 'Fuze regarde son avenir' },
+    { url: 'https://i.imgur.com/ZuYEPQe.jpg', description: 'Fuze rigole' },
+    { url: 'https://i.imgur.com/otxU1vs.jpg', description: 'Fuze rigole' },
+    { url: 'https://i.imgur.com/sB5i78V.jpg', description: 'Fuze pose pour Vogue' }
+];
+
+let currentImageSet = fuzeMondeImages;
+let lastImage = null;
+
+const randImg = document.getElementById('randImg');
+const imageDescription = document.getElementById('imageDescription');
+const changeImageBtn = document.getElementById('changeImageBtn');
+const fuzeNormalBtn = document.getElementById('fuzeNormalBtn');
+const fuzeMondeBtn = document.getElementById('fuzeMondeBtn');
+
+// Fonction de préchargement d'image
+function preloadImage(url) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => resolve(url);
+    });
+}
+
+function getRandomImage(imageSet) {
+    let newImage;
+    do {
+        newImage = imageSet[Math.floor(Math.random() * imageSet.length)];
+    } while (newImage.url === lastImage);
+    
+    lastImage = newImage.url;
+    return newImage;
+}
+
+async function changeImage() {
+    const { url, description } = getRandomImage(currentImageSet);
+    
+    // Précharger l'image avant de la changer
+    await preloadImage(url);
+    
+    randImg.style.opacity = '0';
+    
+    setTimeout(() => {
+        randImg.src = url;
+        imageDescription.textContent = description;
+        randImg.style.opacity = '1';
+    }, 300);
+}
+
+changeImageBtn.addEventListener('click', changeImage);
+
+fuzeNormalBtn.addEventListener('click', () => {
+    currentImageSet = fuzeNormalImages;
+    lastImage = null; // Réinitialise l'image précédente
+    changeImage();
 });
+
+fuzeMondeBtn.addEventListener('click', () => {
+    currentImageSet = fuzeMondeImages;
+    lastImage = null; // Réinitialise l'image précédente
+    changeImage();
+});
+
+// Charger une image au démarrage
+changeImage();
