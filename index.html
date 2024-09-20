@@ -1,69 +1,95 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Images Aléatoires</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #000;
-        overflow: hidden;
-    }
-    #backgroundImg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: blur(10px);
-        z-index: -1;
-    }
-    #randImgContainer {
-        width: 50%;
-        position: relative;
-        z-index: 1;
-    }
-    #randImg {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-    #imageContainer {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        position: relative;
-    }
-    #byDartsgame {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        background-color: rgba(0, 0, 0, 0.4);
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 20px;
-        font-size: 14px;
-        cursor: pointer;
-        mix-blend-mode: multiply;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuze du Monde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #imageContainer {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        #randImg {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: opacity 0.5s ease-in-out;
+        }
+        #imageDescription {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+        }
+        .button {
+            background-color: #e60000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 5px;
+        }
+        .button:hover {
+            background-color: #a60000;
+        }
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .button {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-<img id="backgroundImg" src="" alt="Image de fond" />
-<div id="randImgContainer">
-    <div id="imageContainer"></div>
-    <img id="randImg" src="" alt="Image Aléatoire" />
-    <button id="byDartsgame">by Dartsgame</button>
-</div>
-
-<script src="script.js"></script>
+    <div class="container">
+        <div id="imageContainer">
+            <img id="randImg" src="" alt="Image Aléatoire" />
+            <p id="imageDescription"></p>
+        </div>
+        <div class="button-container">
+            <button id="changeImageBtn" class="button">Nouvelle Fuze-ion !</button>
+            <button id="fuzeNormalBtn" class="button">Fuze du Multivers</button>
+            <button id="fuzeMondeBtn" class="button">Fuze</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
